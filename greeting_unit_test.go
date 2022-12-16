@@ -1,6 +1,10 @@
 package greeting
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestShouldBeAbleToGreetAsHelloWithName(t *testing.T) {
 	name := "Ironman"
@@ -8,9 +12,7 @@ func TestShouldBeAbleToGreetAsHelloWithName(t *testing.T) {
 
 	got := Greet(name)
 
-	if want != got {
-		t.Error()
-	}
+	assert.Equal(t, want, got)
 }
 
 func TestShouldBeAbleToGreetAsHelloWithAnonymousName(t *testing.T) {
@@ -19,7 +21,5 @@ func TestShouldBeAbleToGreetAsHelloWithAnonymousName(t *testing.T) {
 
 	got := Greet(name)
 
-	if want != got {
-		t.Error("(", want, ") is not equal to (", got, ")")
-	}
+	assert.Equal(t, want, got)
 }
