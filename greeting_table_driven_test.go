@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestGreet(t *testing.T) {
+func TestGreetWithTableDrivenTests(t *testing.T) {
 	type TestCase struct {
 		description string
 		name        string
