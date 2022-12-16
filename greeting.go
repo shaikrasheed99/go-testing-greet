@@ -1,8 +1,14 @@
 package greeting
 
+var (
+	helloPrefix string = "Hello, "
+	helloSuffix string = "!!"
+	defaultName string = "Anonymous"
+)
+
 func Greet(name string) string {
 	if name == "" {
-		return "Hello, Anonymous!!"
+		return helloPrefix + defaultName + helloSuffix
 	}
-	return "Hello, " + name + "!!"
+	return helloPrefix + name + helloSuffix
 }
