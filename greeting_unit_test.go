@@ -12,3 +12,14 @@ func TestShouldBeAbleToGreetAsHelloWithName(t *testing.T) {
 		t.Error()
 	}
 }
+
+func TestShouldBeAbleToGreetAsHelloWithAnonymousName(t *testing.T) {
+	name := ""
+	want := "Hello, Anonymous!!"
+
+	got := Greet(name)
+
+	if want != got {
+		t.Error("(", want, ") is not equal to (", got, ")")
+	}
+}
