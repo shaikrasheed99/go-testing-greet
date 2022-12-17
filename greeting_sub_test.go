@@ -7,21 +7,21 @@ import (
 )
 
 func TestGreetWithSubTests(main *testing.T) {
-	main.Run("ShouldBeAbleToGreetAsHelloWithName", func(t *testing.T) {
+	main.Run("ShouldBeAbleToGreetAsHelloWithName", func(sub *testing.T) {
 		name := "Ironman"
 		want := "Hello, Ironman!!"
 
 		got := Greet(name)
 
-		assert.Equal(t, want, got)
+		assert.Equal(sub, want, got)
 	})
 
-	main.Run("ShouldBeAbleToGreetAsHelloWithAnonymousName", func(t *testing.T) {
+	main.Run("ShouldBeAbleToGreetAsHelloWithAnonymousName", func(sub *testing.T) {
 		name := ""
 		want := "Hello, Anonymous!!"
 
 		got := Greet(name)
 
-		assert.Equal(t, want, got)
+		assert.Equal(sub, want, got)
 	})
 }
